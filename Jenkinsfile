@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    environment{
-        ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory_access_token')
-    }
+    // environment{
+    //     ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory_access_token')
+    // }
     stages {
        stage('build') {
           steps {
@@ -26,9 +26,9 @@ pipeline {
            }
        }
     }
-    post {
-        always {
-            archiveArtifacts artifacts: 'results.jar', fingerprint: true
-        }
- }
+//     post {
+//         always {
+//             archiveArtifacts artifacts: 'results.jar', fingerprint: true
+//         }
+//  }
 }
