@@ -4,6 +4,7 @@ pipeline {
        stage('build') {
           steps {
              echo 'Stage build starting'
+             sh 'python --version'
              sh 'MainScript.sh'
              echo 'Stage build ending'
           }
