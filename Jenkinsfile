@@ -3,14 +3,16 @@ pipeline {
     stages {
        stage('build') {
           steps {
-             echo 'Notify GitLab'
-             echo 'build step goes here'
+             echo 'Stage build starting'
+             sh 'MainScript.sh'
+             echo 'Stage build ending'
           }
        }
        stage(test) {
            steps {
-               echo 'Notify GitLab'
-               echo 'test step goes here'
+               echo 'Stage test starting'
+               sh 'TestScript.sh'
+               echo 'Stage test ending'
 
            }
        }
