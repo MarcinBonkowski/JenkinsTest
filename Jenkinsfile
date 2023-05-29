@@ -20,6 +20,11 @@ pipeline {
 
            }
        }
+        stage(deploy) {
+            steps {
+            echo 'Deploy stage start'
+           }
+       }
     }
     post {
         always {
