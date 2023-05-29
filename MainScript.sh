@@ -2,6 +2,6 @@
 
 echo "/nStart of the main script!"
 
-python Main.py
+python3 Main.py
 
 echo "End of the main script"

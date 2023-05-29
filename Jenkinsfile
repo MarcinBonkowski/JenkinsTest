@@ -1,10 +1,13 @@
 pipeline {
     agent any
+    environment{
+        ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory_access_token')
+    }
     stages {
        stage('build') {
           steps {
              echo 'Stage build starting'
-             sh 'python --version'
+             sh 'python3 --version'
              sh 'MainScript.sh'
              echo 'Stage build ending'
           }
@@ -18,4 +21,8 @@ pipeline {
            }
        }
     }
+    post {
+        always {
+            archiveArtifacts artifacts: 'results.jar', fingerprint: true
+        }
  }
