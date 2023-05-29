@@ -8,14 +8,14 @@ pipeline {
           steps {
              echo 'Stage build starting'
              sh 'python3 --version'
-             sh './MainScript.sh'
+             sh 'bash ./MainScript.sh'
              echo 'Stage build ending'
           }
        }
        stage(test) {
            steps {
                echo 'Stage test starting'
-               sh './TestScript.sh'
+               sh 'bash ./TestScript.sh'
                echo 'Stage test ending'
 
            }
