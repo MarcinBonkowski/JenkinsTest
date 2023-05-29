@@ -31,3 +31,4 @@ pipeline {
             archiveArtifacts artifacts: 'results.jar', fingerprint: true
         }
  }
+}
